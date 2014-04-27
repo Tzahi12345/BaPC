@@ -65,18 +65,33 @@
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.gpuLabel = new System.Windows.Forms.Label();
             this.gpuPriceLabel = new System.Windows.Forms.Label();
+            this.partsLink = new System.Windows.Forms.LinkLabel();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.getbuildButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.partsLink = new System.Windows.Forms.LinkLabel();
+            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.osCheckBox = new System.Windows.Forms.CheckBox();
+            this.windows7CheckBox = new System.Windows.Forms.RadioButton();
+            this.windows8CheckBox = new System.Windows.Forms.RadioButton();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.contactBox = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.emailLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.label13 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.optionsGroupBox.SuspendLayout();
+            this.contactBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -107,6 +122,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.optionsGroupBox);
             this.tabPage2.Controls.Add(this.getbuildLabel);
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabPage2.Controls.Add(this.priceTB);
@@ -475,6 +491,16 @@
             this.gpuPriceLabel.Size = new System.Drawing.Size(0, 16);
             this.gpuPriceLabel.TabIndex = 24;
             // 
+            // partsLink
+            // 
+            this.partsLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.partsLink.AutoSize = true;
+            this.partsLink.Location = new System.Drawing.Point(319, 331);
+            this.partsLink.Name = "partsLink";
+            this.partsLink.Size = new System.Drawing.Size(0, 20);
+            this.partsLink.TabIndex = 29;
+            this.partsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.partsLink_LinkClicked);
+            // 
             // priceTB
             // 
             this.priceTB.Font = new System.Drawing.Font("Trajan Pro", 15.75F);
@@ -529,6 +555,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.webBrowser2);
+            this.tabPage3.Controls.Add(this.contactBox);
+            this.tabPage3.Controls.Add(this.richTextBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -536,16 +566,138 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // partsLink
+            // optionsGroupBox
             // 
-            this.partsLink.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.partsLink.AutoSize = true;
-            this.partsLink.Location = new System.Drawing.Point(319, 331);
-            this.partsLink.Name = "partsLink";
-            this.partsLink.Size = new System.Drawing.Size(0, 20);
-            this.partsLink.TabIndex = 29;
-            this.partsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.partsLink_LinkClicked);
+            this.optionsGroupBox.Controls.Add(this.windows8CheckBox);
+            this.optionsGroupBox.Controls.Add(this.windows7CheckBox);
+            this.optionsGroupBox.Controls.Add(this.osCheckBox);
+            this.optionsGroupBox.Location = new System.Drawing.Point(448, 13);
+            this.optionsGroupBox.Name = "optionsGroupBox";
+            this.optionsGroupBox.Size = new System.Drawing.Size(200, 95);
+            this.optionsGroupBox.TabIndex = 5;
+            this.optionsGroupBox.TabStop = false;
+            this.optionsGroupBox.Text = "Options";
+            // 
+            // osCheckBox
+            // 
+            this.osCheckBox.AutoSize = true;
+            this.osCheckBox.Location = new System.Drawing.Point(6, 20);
+            this.osCheckBox.Name = "osCheckBox";
+            this.osCheckBox.Size = new System.Drawing.Size(97, 18);
+            this.osCheckBox.TabIndex = 0;
+            this.osCheckBox.Text = "Include OS";
+            this.osCheckBox.UseVisualStyleBackColor = true;
+            this.osCheckBox.CheckedChanged += new System.EventHandler(this.osCheckBox_CheckedChanged);
+            // 
+            // windows7CheckBox
+            // 
+            this.windows7CheckBox.AutoSize = true;
+            this.windows7CheckBox.Enabled = false;
+            this.windows7CheckBox.Location = new System.Drawing.Point(20, 44);
+            this.windows7CheckBox.Name = "windows7CheckBox";
+            this.windows7CheckBox.Size = new System.Drawing.Size(95, 18);
+            this.windows7CheckBox.TabIndex = 1;
+            this.windows7CheckBox.TabStop = true;
+            this.windows7CheckBox.Text = "Windows 7";
+            this.windows7CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // windows8CheckBox
+            // 
+            this.windows8CheckBox.AutoSize = true;
+            this.windows8CheckBox.Enabled = false;
+            this.windows8CheckBox.Location = new System.Drawing.Point(20, 68);
+            this.windows8CheckBox.Name = "windows8CheckBox";
+            this.windows8CheckBox.Size = new System.Drawing.Size(116, 18);
+            this.windows8CheckBox.TabIndex = 2;
+            this.windows8CheckBox.TabStop = true;
+            this.windows8CheckBox.Text = "Windows 8/8,1";
+            this.windows8CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(659, 148);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // contactBox
+            // 
+            this.contactBox.Controls.Add(this.linkLabel1);
+            this.contactBox.Controls.Add(this.label12);
+            this.contactBox.Controls.Add(this.emailLinkLabel);
+            this.contactBox.Controls.Add(this.label11);
+            this.contactBox.Location = new System.Drawing.Point(431, 433);
+            this.contactBox.Name = "contactBox";
+            this.contactBox.Size = new System.Drawing.Size(220, 80);
+            this.contactBox.TabIndex = 1;
+            this.contactBox.TabStop = false;
+            this.contactBox.Text = "Contact Me";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Trajan Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 18);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "E-mail:";
+            // 
+            // emailLinkLabel
+            // 
+            this.emailLinkLabel.AutoSize = true;
+            this.emailLinkLabel.Location = new System.Drawing.Point(73, 23);
+            this.emailLinkLabel.Name = "emailLinkLabel";
+            this.emailLinkLabel.Size = new System.Drawing.Size(139, 14);
+            this.emailLinkLabel.TabIndex = 1;
+            this.emailLinkLabel.TabStop = true;
+            this.emailLinkLabel.Text = "tzahi2@hotmail.com";
+            this.emailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.emailLinkLabel_LinkClicked);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Trajan Pro", 10F);
+            this.label12.Location = new System.Drawing.Point(7, 50);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Website:";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(86, 52);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(67, 14);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Tzahi.net";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(6, 155);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(419, 358);
+            this.webBrowser2.TabIndex = 2;
+            this.webBrowser2.Url = new System.Uri("http://www.youtube.com/embed/QBK3QpQVnaw", System.UriKind.Absolute);
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(441, 155);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(210, 213);
+            this.label13.TabIndex = 3;
+            this.label13.Text = resources.GetString("label13.Text");
             // 
             // BaPC
             // 
@@ -557,6 +709,7 @@
             this.MaximizeBox = false;
             this.Name = "BaPC";
             this.Text = "BaPC";
+            this.Load += new System.EventHandler(this.BaPC_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -564,6 +717,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.optionsGroupBox.ResumeLayout(false);
+            this.optionsGroupBox.PerformLayout();
+            this.contactBox.ResumeLayout(false);
+            this.contactBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -612,6 +770,18 @@
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.LinkLabel partsLink;
+        private System.Windows.Forms.GroupBox optionsGroupBox;
+        private System.Windows.Forms.RadioButton windows8CheckBox;
+        private System.Windows.Forms.RadioButton windows7CheckBox;
+        private System.Windows.Forms.CheckBox osCheckBox;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox contactBox;
+        private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.LinkLabel emailLinkLabel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
 
     }
 }

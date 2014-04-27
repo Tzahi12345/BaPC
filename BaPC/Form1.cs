@@ -55,6 +55,7 @@ namespace BaPC
         Part cx430 = new Part();
         Part cx750m = new Part();
         //OSs
+        Part windows7 = new Part();
         Part windows8 = new Part();
         public void Prices() {
             athlon760k.price = 84.99F;
@@ -83,6 +84,7 @@ namespace BaPC
             atxfractal.price = 84.99F;
             cx430.price = 39.99F;
             cx750m.price = 79.99F;
+            windows7.price = 84.99F;
             windows8.price = 89.99F;
         }
 
@@ -113,6 +115,7 @@ namespace BaPC
             atxfractal.name = "Fractal Design Define R4 w/ Window";
             cx430.name = "Corsair CX430 430W";
             cx750m.name = "Corsair CX750M 750W";
+            windows7.name = "Windows 7 Home Premium 64-bit";
             windows8.name = "Microsoft Windows 8.1 64-bit";
         }
         /*Unecessary, to be removed
@@ -143,10 +146,13 @@ namespace BaPC
         public string currentPartsLink;
         public string na = "N/A";
         public int priceInt;
+
         public BaPC()
         {
 
             InitializeComponent();
+            richTextBox1.ReadOnly = true;
+            richTextBox1.BackColor = System.Drawing.SystemColors.Window;
         }
         //Simplified repetitive actions
         public void GenerateParts(int x)
@@ -218,7 +224,14 @@ namespace BaPC
         {
             if ((priceInt < x))
             {
-                getbuildLabel.Text = "We do not currently support prices under $" + x + ".";
+                if ((osCheckBox.Checked == true) && ((windows7CheckBox.Checked == true) || (windows8CheckBox.Checked == true)))
+                {
+                    getbuildLabel.Text = "We are not able to include an Operating System at the current price, try removing it.";
+                }
+                else
+                {
+                    getbuildLabel.Text = "We do not currently support prices under $" + x + ".";
+                }
             }
             else
             {
@@ -246,14 +259,32 @@ namespace BaPC
         {
             cpucoolerLabel.Text = na;
             cpucoolerPriceLabel.Text = na;
-            osLabel.Text = na;
-            osPriceLabel.Text = na;
+            if (osCheckBox.Checked == false)
+            {
+                osLabel.Text = na;
+                osPriceLabel.Text = na;
+            }
+            else
+            {
+                if (windows7CheckBox.Checked == true)
+                {
+                    osLabel.Text = windows7.name;
+                    osPriceLabel.Text = FloatToString(windows7.price);
+                }
+                else if (windows8CheckBox.Checked == true)
+                {
+                    osLabel.Text = windows8.name;
+                    osPriceLabel.Text = FloatToString(windows8.price);
+                }
+            }
+
         }
         public string FloatToString(float f)
         {
             string s = f.ToString("0.00");
             return s;
         }
+
         //Other functions that include buttons, labels, and other visual items
         private void blahToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -281,6 +312,18 @@ namespace BaPC
             try
             {
                 priceInt = Convert.ToInt32(priceTB.Text);
+                //Checks if OS is checked and substracts the cost
+                if (osCheckBox.Checked == true)
+                {
+                    if (windows7CheckBox.Checked == true)
+                    {
+                        priceInt = priceInt - 85;
+                    }
+                    else if (windows8CheckBox.Checked == true)
+                    {
+                        priceInt = priceInt - 90;
+                    }
+                }
                 SupportedPrice(460);
             }
             catch (Exception ex)
@@ -298,6 +341,7 @@ namespace BaPC
 
                 }
             }
+
             //Activates appropriate prices
             GenerateParts(priceInt);
             //Clears current labels
@@ -424,6 +468,51 @@ namespace BaPC
         private void partsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(currentPartsLink);
+        }
+
+        private void osCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (osCheckBox.Checked == true)
+            {
+                windows7CheckBox.Enabled = true;
+                windows8CheckBox.Enabled = true;
+            }
+            else
+            {
+                windows7CheckBox.Enabled = false;
+                windows8CheckBox.Enabled = false;
+            }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BaPC_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emailLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            System.Diagnostics.Process.Start("mailto:tzahi2@hotmail.com");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://tzahi.net");
         }
     }
 }

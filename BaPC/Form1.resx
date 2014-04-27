@@ -120,6 +120,12 @@
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Video is by Vsauce, you should check him out. Honorable mentions for this app include my "supportive" family and friends, as well as PCPartPicker and reddit.com/r/buildapc. If you need any extra help, check out those resources (especially reddit.com/r/buildapc), they are quite helpful.</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>I am a 15-year-old who is passionate about making technology cheaper for everyone. With this app, you can get the cheapest gaming PC builds at your fingertips. I highly appreciate feedback, so please do so at the contact box below. Thank you, and please enjoy the following awesome video.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
