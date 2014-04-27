@@ -19,7 +19,6 @@ namespace BaPC
         {
             public float price;
             public string name;
-            public bool active;
         }
         //CPUs
         Part athlon760k = new Part();
@@ -88,7 +87,7 @@ namespace BaPC
             i5.name = "Intel i5-4670K";
             i7.name = "Intel i7-4770K";
             hyper212plus.name = "Cooler Master Hyper 212 Plus";
-            msia55m.name = "MSI A55M-E35";
+            msia55m.name = "MSI A55M-E33";
             biostara960d.name = "Biostar A960D+";
             asrockz87.name = "ASRock Z87 Pro3";
             kblu.name = "Kingston Blu 2x4GB DDR3-1600";
@@ -123,6 +122,7 @@ namespace BaPC
             public bool active;
         }
         Build fourfifty = new Build();
+        public string na = "N/A";
         public int priceInt;
         public BaPC()
         {
@@ -132,7 +132,7 @@ namespace BaPC
         //Simplified repetitive actions
         public void GenerateParts(int x)
         {
-            if ((x > 449) && (x < 501))
+            if ((x > 459) && (x < 501))
             {
                 fourfifty.active = true;
                 
@@ -149,7 +149,7 @@ namespace BaPC
                 getbuildLabel.Text = "For $" + Convert.ToString(priceInt) + " you can get these parts:";
             }
         }
-        public string FloatToInt(float f)
+        public string FloatToString(float f)
         {
             string s = f.ToString("0.00");
             return s;
@@ -179,7 +179,7 @@ namespace BaPC
             try
             {
                 priceInt = Convert.ToInt32(priceTB.Text);
-                SupportedPrice(450);
+                SupportedPrice(460);
             }
             catch (Exception ex)
             {
@@ -202,8 +202,25 @@ namespace BaPC
             if (fourfifty.active == true)
             {
                 cpuLabel.Text = athlon760k.name;
-                cpuPriceLabel.Text = FloatToInt(athlon760k.price);
-
+                cpuPriceLabel.Text = FloatToString(athlon760k.price);
+                cpucoolerLabel.Text = na;
+                cpucoolerPriceLabel.Text = na;
+                motherboardLabel.Text = msia55m.name;
+                motherboardPriceLabel.Text = FloatToString(msia55m.price);
+                memoryLabel.Text = kblu.name;
+                memoryPriceLabel.Text = FloatToString(kblu.price);
+                storageLabel.Text = tb1.name;
+                storagePriceLabel.Text = FloatToString(tb1.price);
+                gpuLabel.Text = n750ti.name;
+                gpuPriceLabel.Text = FloatToString(n750ti.price);
+                caseLabel.Text = matxcougar.name;
+                casePriceLabel.Text = FloatToString(matxcougar.price);
+                psuLabel.Text = cx430.name;
+                psuPriceLabel.Text = FloatToString(cx430.price);
+                osLabel.Text = na;
+                osPriceLabel.Text = na;
+                float combinedPrice = athlon760k.price + msia55m.price + kblu.price + tb1.price + n750ti.price + matxcougar.price + cx430.price;
+                totalPriceLabel.Text = FloatToString(combinedPrice);
             }
         }
 
