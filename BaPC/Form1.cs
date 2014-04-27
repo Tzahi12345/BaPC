@@ -122,6 +122,7 @@ namespace BaPC
             public bool active;
         }
         Build fourfifty = new Build();
+        Build fivesixty = new Build();
         public string na = "N/A";
         public int priceInt;
         public BaPC()
@@ -132,11 +133,35 @@ namespace BaPC
         //Simplified repetitive actions
         public void GenerateParts(int x)
         {
-            if ((x > 459) && (x < 501))
+            if ((x > 459) && (x < 560))
             {
                 fourfifty.active = true;
                 
+            } else if ((x >= 560) && (x < 660)) {
+                fivesixty.active = true;
             }
+        }
+        public void ClearLabels()
+        {
+            cpuLabel.Text = "";
+            cpuPriceLabel.Text = "";
+            cpucoolerLabel.Text = "";
+            cpucoolerPriceLabel.Text = "";
+            motherboardLabel.Text = "";
+            motherboardPriceLabel.Text = "";
+            memoryLabel.Text = "";
+            memoryPriceLabel.Text = "";
+            storageLabel.Text = "";
+            storagePriceLabel.Text = "";
+            gpuLabel.Text = "";
+            gpuPriceLabel.Text = "";
+            caseLabel.Text = "";
+            casePriceLabel.Text = "";
+            psuLabel.Text = "";
+            psuPriceLabel.Text = "";
+            osLabel.Text = "";
+            osPriceLabel.Text = "";
+            totalPriceLabel.Text = "";
         }
         public void SupportedPrice(int x)
         {
@@ -148,6 +173,23 @@ namespace BaPC
             {
                 getbuildLabel.Text = "For $" + Convert.ToString(priceInt) + " you can get these parts:";
             }
+        }
+        void Automatizer(Part cpu, Part motherboard, Part memory, Part storage, Part gpu, Part Case, Part psu)
+        {
+            cpuLabel.Text = cpu.name;
+            cpuPriceLabel.Text = FloatToString(cpu.price);
+            motherboardLabel.Text = motherboard.name;
+            motherboardPriceLabel.Text = FloatToString(motherboard.price);
+            memoryLabel.Text = memory.name;
+            memoryPriceLabel.Text = FloatToString(memory.price);
+            storageLabel.Text = storage.name;
+            storagePriceLabel.Text = FloatToString(storage.price);
+            gpuLabel.Text = gpu.name;
+            gpuPriceLabel.Text = FloatToString(gpu.price);
+            caseLabel.Text = Case.name;
+            casePriceLabel.Text = FloatToString(Case.price);
+            psuLabel.Text = psu.name;
+            psuPriceLabel.Text = FloatToString(psu.price);
         }
         public string FloatToString(float f)
         {
@@ -172,9 +214,11 @@ namespace BaPC
 
         private void getbuildButton_Click(object sender, EventArgs e)
         {
+
             //Calling needed functions for parts
             Names();
             Prices();
+
             //Try and catch for int
             try
             {
@@ -198,29 +242,31 @@ namespace BaPC
             }
             //Activates appropriate prices
             GenerateParts(priceInt);
+            //Clears current labels
+            ClearLabels();
+
             //If statements for each priceInt
             if (fourfifty.active == true)
             {
-                cpuLabel.Text = athlon760k.name;
-                cpuPriceLabel.Text = FloatToString(athlon760k.price);
+                Automatizer(athlon760k, msia55m, kblu, tb1, n750ti, matxcougar, cx430);
                 cpucoolerLabel.Text = na;
                 cpucoolerPriceLabel.Text = na;
-                motherboardLabel.Text = msia55m.name;
-                motherboardPriceLabel.Text = FloatToString(msia55m.price);
-                memoryLabel.Text = kblu.name;
-                memoryPriceLabel.Text = FloatToString(kblu.price);
-                storageLabel.Text = tb1.name;
-                storagePriceLabel.Text = FloatToString(tb1.price);
-                gpuLabel.Text = n750ti.name;
-                gpuPriceLabel.Text = FloatToString(n750ti.price);
-                caseLabel.Text = matxcougar.name;
-                casePriceLabel.Text = FloatToString(matxcougar.price);
-                psuLabel.Text = cx430.name;
-                psuPriceLabel.Text = FloatToString(cx430.price);
                 osLabel.Text = na;
                 osPriceLabel.Text = na;
                 float combinedPrice = athlon760k.price + msia55m.price + kblu.price + tb1.price + n750ti.price + matxcougar.price + cx430.price;
                 totalPriceLabel.Text = FloatToString(combinedPrice);
+                fourfifty.active = false;
+            }
+            else if (fivesixty.active == true)
+            {
+                Automatizer(fx6300, biostara960d, kblu, tb1, n760, matxcougar, cx430);
+                cpucoolerLabel.Text = na;
+                cpucoolerPriceLabel.Text = na;
+                osLabel.Text = na;
+                osPriceLabel.Text = na;
+                float combinedPrice = fx6300.price + biostara960d.price + kblu.price + tb1.price + n760.price + matxcougar.price + cx430.price;
+                totalPriceLabel.Text = FloatToString(combinedPrice);
+                fivesixty.active = false;
             }
         }
 
@@ -230,6 +276,11 @@ namespace BaPC
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
         }

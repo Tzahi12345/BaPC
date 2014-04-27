@@ -70,10 +70,12 @@
             this.getbuildButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -503,6 +505,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.webBrowser1);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -521,6 +525,16 @@
             this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(653, 515);
+            this.webBrowser1.TabIndex = 1;
+            this.webBrowser1.Url = new System.Uri("http://www.youtube.com/embed/d_56kyib-Ls", System.UriKind.Absolute);
+            // 
             // BaPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,6 +551,7 @@
             this.tabPage2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -583,6 +598,7 @@
         private System.Windows.Forms.Label cpucoolerPriceLabel;
         private System.Windows.Forms.Label cpuPriceLabel;
         private System.Windows.Forms.Label totalPriceLabel;
+        private System.Windows.Forms.WebBrowser webBrowser1;
 
     }
 }
