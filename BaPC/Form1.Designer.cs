@@ -69,8 +69,9 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.getbuildButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.partsLink = new System.Windows.Forms.LinkLabel();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -164,6 +165,7 @@
             this.tableLayoutPanel1.Controls.Add(this.totalPriceLabel, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.gpuLabel, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.gpuPriceLabel, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.partsLink, 1, 9);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Trajan Pro", 12F);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 133);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -515,6 +517,16 @@
             this.tabPage1.Text = "Guide";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(653, 515);
+            this.webBrowser1.TabIndex = 1;
+            this.webBrowser1.Url = new System.Uri("http://www.youtube.com/embed/d_56kyib-Ls", System.UriKind.Absolute);
+            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
@@ -525,15 +537,15 @@
             this.tabPage3.Text = "About";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // webBrowser1
+            // partsLink
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(653, 515);
-            this.webBrowser1.TabIndex = 1;
-            this.webBrowser1.Url = new System.Uri("http://www.youtube.com/embed/d_56kyib-Ls", System.UriKind.Absolute);
+            this.partsLink.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.partsLink.AutoSize = true;
+            this.partsLink.Location = new System.Drawing.Point(319, 331);
+            this.partsLink.Name = "partsLink";
+            this.partsLink.Size = new System.Drawing.Size(0, 20);
+            this.partsLink.TabIndex = 29;
+            this.partsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.partsLink_LinkClicked);
             // 
             // BaPC
             // 
@@ -599,6 +611,7 @@
         private System.Windows.Forms.Label cpuPriceLabel;
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.LinkLabel partsLink;
 
     }
 }
