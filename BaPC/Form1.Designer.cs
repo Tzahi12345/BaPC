@@ -36,6 +36,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.getbuildLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.osPriceLabel = new System.Windows.Forms.Label();
+            this.psuPriceLabel = new System.Windows.Forms.Label();
+            this.casePriceLabel = new System.Windows.Forms.Label();
+            this.storagePriceLabel = new System.Windows.Forms.Label();
+            this.memoryPriceLabel = new System.Windows.Forms.Label();
+            this.motherboardPriceLabel = new System.Windows.Forms.Label();
+            this.cpucoolerPriceLabel = new System.Windows.Forms.Label();
+            this.cpuPriceLabel = new System.Windows.Forms.Label();
+            this.cpuLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +55,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.cpucoolerLabel = new System.Windows.Forms.Label();
+            this.motherboardLabel = new System.Windows.Forms.Label();
+            this.memoryLabel = new System.Windows.Forms.Label();
+            this.storageLabel = new System.Windows.Forms.Label();
+            this.caseLabel = new System.Windows.Forms.Label();
+            this.psuLabel = new System.Windows.Forms.Label();
+            this.osLabel = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
+            this.gpuLabel = new System.Windows.Forms.Label();
+            this.gpuPriceLabel = new System.Windows.Forms.Label();
             this.priceTB = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.getbuildButton = new System.Windows.Forms.Button();
@@ -114,6 +133,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel1.Controls.Add(this.osPriceLabel, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.psuPriceLabel, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.casePriceLabel, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.storagePriceLabel, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.memoryPriceLabel, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.motherboardPriceLabel, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cpucoolerPriceLabel, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cpuPriceLabel, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cpuLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -124,6 +152,16 @@
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.cpucoolerLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.motherboardLabel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.memoryLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.storageLabel, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.caseLabel, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.psuLabel, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.osLabel, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.totalPriceLabel, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.gpuLabel, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.gpuPriceLabel, 2, 5);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Trajan Pro", 12F);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 133);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -141,6 +179,96 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 358);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // osPriceLabel
+            // 
+            this.osPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.osPriceLabel.AutoSize = true;
+            this.osPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.osPriceLabel.Location = new System.Drawing.Point(532, 298);
+            this.osPriceLabel.Name = "osPriceLabel";
+            this.osPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.osPriceLabel.TabIndex = 27;
+            // 
+            // psuPriceLabel
+            // 
+            this.psuPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.psuPriceLabel.AutoSize = true;
+            this.psuPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.psuPriceLabel.Location = new System.Drawing.Point(532, 262);
+            this.psuPriceLabel.Name = "psuPriceLabel";
+            this.psuPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.psuPriceLabel.TabIndex = 26;
+            // 
+            // casePriceLabel
+            // 
+            this.casePriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.casePriceLabel.AutoSize = true;
+            this.casePriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.casePriceLabel.Location = new System.Drawing.Point(532, 226);
+            this.casePriceLabel.Name = "casePriceLabel";
+            this.casePriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.casePriceLabel.TabIndex = 25;
+            // 
+            // storagePriceLabel
+            // 
+            this.storagePriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.storagePriceLabel.AutoSize = true;
+            this.storagePriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storagePriceLabel.Location = new System.Drawing.Point(532, 154);
+            this.storagePriceLabel.Name = "storagePriceLabel";
+            this.storagePriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.storagePriceLabel.TabIndex = 23;
+            // 
+            // memoryPriceLabel
+            // 
+            this.memoryPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.memoryPriceLabel.AutoSize = true;
+            this.memoryPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoryPriceLabel.Location = new System.Drawing.Point(532, 118);
+            this.memoryPriceLabel.Name = "memoryPriceLabel";
+            this.memoryPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.memoryPriceLabel.TabIndex = 22;
+            // 
+            // motherboardPriceLabel
+            // 
+            this.motherboardPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.motherboardPriceLabel.AutoSize = true;
+            this.motherboardPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.motherboardPriceLabel.Location = new System.Drawing.Point(532, 82);
+            this.motherboardPriceLabel.Name = "motherboardPriceLabel";
+            this.motherboardPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.motherboardPriceLabel.TabIndex = 21;
+            // 
+            // cpucoolerPriceLabel
+            // 
+            this.cpucoolerPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cpucoolerPriceLabel.AutoSize = true;
+            this.cpucoolerPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpucoolerPriceLabel.Location = new System.Drawing.Point(532, 46);
+            this.cpucoolerPriceLabel.Name = "cpucoolerPriceLabel";
+            this.cpucoolerPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.cpucoolerPriceLabel.TabIndex = 20;
+            // 
+            // cpuPriceLabel
+            // 
+            this.cpuPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cpuPriceLabel.AutoSize = true;
+            this.cpuPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpuPriceLabel.Location = new System.Drawing.Point(532, 10);
+            this.cpuPriceLabel.Name = "cpuPriceLabel";
+            this.cpuPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.cpuPriceLabel.TabIndex = 19;
+            // 
+            // cpuLabel
+            // 
+            this.cpuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cpuLabel.AutoSize = true;
+            this.cpuLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpuLabel.Location = new System.Drawing.Point(319, 10);
+            this.cpuLabel.Name = "cpuLabel";
+            this.cpuLabel.Size = new System.Drawing.Size(0, 16);
+            this.cpuLabel.TabIndex = 10;
             // 
             // label1
             // 
@@ -243,6 +371,106 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Total:";
             // 
+            // cpucoolerLabel
+            // 
+            this.cpucoolerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cpucoolerLabel.AutoSize = true;
+            this.cpucoolerLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpucoolerLabel.Location = new System.Drawing.Point(319, 46);
+            this.cpucoolerLabel.Name = "cpucoolerLabel";
+            this.cpucoolerLabel.Size = new System.Drawing.Size(0, 16);
+            this.cpucoolerLabel.TabIndex = 11;
+            // 
+            // motherboardLabel
+            // 
+            this.motherboardLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.motherboardLabel.AutoSize = true;
+            this.motherboardLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.motherboardLabel.Location = new System.Drawing.Point(319, 82);
+            this.motherboardLabel.Name = "motherboardLabel";
+            this.motherboardLabel.Size = new System.Drawing.Size(0, 16);
+            this.motherboardLabel.TabIndex = 12;
+            // 
+            // memoryLabel
+            // 
+            this.memoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.memoryLabel.AutoSize = true;
+            this.memoryLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memoryLabel.Location = new System.Drawing.Point(319, 118);
+            this.memoryLabel.Name = "memoryLabel";
+            this.memoryLabel.Size = new System.Drawing.Size(0, 16);
+            this.memoryLabel.TabIndex = 13;
+            // 
+            // storageLabel
+            // 
+            this.storageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.storageLabel.AutoSize = true;
+            this.storageLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storageLabel.Location = new System.Drawing.Point(319, 154);
+            this.storageLabel.Name = "storageLabel";
+            this.storageLabel.Size = new System.Drawing.Size(0, 16);
+            this.storageLabel.TabIndex = 14;
+            // 
+            // caseLabel
+            // 
+            this.caseLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.caseLabel.AutoSize = true;
+            this.caseLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.caseLabel.Location = new System.Drawing.Point(319, 226);
+            this.caseLabel.Name = "caseLabel";
+            this.caseLabel.Size = new System.Drawing.Size(0, 16);
+            this.caseLabel.TabIndex = 16;
+            // 
+            // psuLabel
+            // 
+            this.psuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.psuLabel.AutoSize = true;
+            this.psuLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.psuLabel.Location = new System.Drawing.Point(319, 262);
+            this.psuLabel.Name = "psuLabel";
+            this.psuLabel.Size = new System.Drawing.Size(0, 16);
+            this.psuLabel.TabIndex = 17;
+            // 
+            // osLabel
+            // 
+            this.osLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.osLabel.AutoSize = true;
+            this.osLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.osLabel.Location = new System.Drawing.Point(319, 298);
+            this.osLabel.Name = "osLabel";
+            this.osLabel.Size = new System.Drawing.Size(0, 16);
+            this.osLabel.TabIndex = 18;
+            // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.totalPriceLabel.AutoSize = true;
+            this.totalPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceLabel.Location = new System.Drawing.Point(532, 333);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.totalPriceLabel.TabIndex = 28;
+            // 
+            // gpuLabel
+            // 
+            this.gpuLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gpuLabel.AutoSize = true;
+            this.gpuLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpuLabel.Location = new System.Drawing.Point(319, 190);
+            this.gpuLabel.Name = "gpuLabel";
+            this.gpuLabel.Size = new System.Drawing.Size(0, 16);
+            this.gpuLabel.TabIndex = 15;
+            // 
+            // gpuPriceLabel
+            // 
+            this.gpuPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gpuPriceLabel.AutoSize = true;
+            this.gpuPriceLabel.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpuPriceLabel.Location = new System.Drawing.Point(532, 190);
+            this.gpuPriceLabel.Name = "gpuPriceLabel";
+            this.gpuPriceLabel.Size = new System.Drawing.Size(0, 16);
+            this.gpuPriceLabel.TabIndex = 24;
+            // 
             // priceTB
             // 
             this.priceTB.Font = new System.Drawing.Font("Trajan Pro", 15.75F);
@@ -336,6 +564,25 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label cpuLabel;
+        private System.Windows.Forms.Label cpucoolerLabel;
+        private System.Windows.Forms.Label motherboardLabel;
+        private System.Windows.Forms.Label memoryLabel;
+        private System.Windows.Forms.Label storageLabel;
+        private System.Windows.Forms.Label gpuLabel;
+        private System.Windows.Forms.Label caseLabel;
+        private System.Windows.Forms.Label psuLabel;
+        private System.Windows.Forms.Label osLabel;
+        private System.Windows.Forms.Label osPriceLabel;
+        private System.Windows.Forms.Label psuPriceLabel;
+        private System.Windows.Forms.Label casePriceLabel;
+        private System.Windows.Forms.Label gpuPriceLabel;
+        private System.Windows.Forms.Label storagePriceLabel;
+        private System.Windows.Forms.Label memoryPriceLabel;
+        private System.Windows.Forms.Label motherboardPriceLabel;
+        private System.Windows.Forms.Label cpucoolerPriceLabel;
+        private System.Windows.Forms.Label cpuPriceLabel;
+        private System.Windows.Forms.Label totalPriceLabel;
 
     }
 }
