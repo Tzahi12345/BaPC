@@ -238,7 +238,7 @@ namespace BaPC
                 getbuildLabel.Text = "For $" + Convert.ToString(priceInt) + " you can get these parts:";
             }
         }
-        void Automatizer(Part cpu, Part motherboard, Part memory, Part storage, Part gpu, Part Case, Part psu)
+        string Automatizer(Part cpu, Part motherboard, Part memory, Part storage, Part gpu, Part Case, Part psu)
         {
             cpuLabel.Text = cpu.name;
             cpuPriceLabel.Text = FloatToString(cpu.price);
@@ -254,6 +254,26 @@ namespace BaPC
             casePriceLabel.Text = FloatToString(Case.price);
             psuLabel.Text = psu.name;
             psuPriceLabel.Text = FloatToString(psu.price);
+            float combinedPrice;
+            float addedValue;
+            addedValue = 0.00F;
+            if (osCheckBox.Checked == true)
+            {
+
+                if (windows7CheckBox.Checked == true)
+                {
+                    addedValue = 84.99F;
+                }
+                else if (windows8CheckBox.Checked == true)
+                {
+                    addedValue = 89.99F;
+                }
+            }
+            NoExtras();
+            combinedPrice = cpu.price + motherboard.price + memory.price + storage.price + gpu.price + Case.price + psu.price + addedValue;
+            string priceString = FloatToString(combinedPrice);
+            return priceString;
+
         }
         void NoExtras()
         {
@@ -275,6 +295,11 @@ namespace BaPC
                 {
                     osLabel.Text = windows8.name;
                     osPriceLabel.Text = FloatToString(windows8.price);
+                }
+                else
+                {
+                    osLabel.Text = na;
+                    osPriceLabel.Text = na;
                 }
             }
 
@@ -350,100 +375,72 @@ namespace BaPC
             //If statements for each priceInt
             if (fourfifty.active == true)
             {
-                Automatizer(athlon760k, msia55m, kblu, tb1, n750ti, matxcougar, cx430);
-                NoExtras();
-                float combinedPrice = athlon760k.price + msia55m.price + kblu.price + tb1.price + n750ti.price + matxcougar.price + cx430.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                
+                totalPriceLabel.Text = "Around $" + Automatizer(athlon760k, msia55m, kblu, tb1, n750ti, matxcougar, cx430);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYR";
                 fourfifty.active = false;
             }
             else if (fivesixty.active == true)
             {
-                Automatizer(fx6300, biostara960d, kblu, tb1, n760, matxcougar, cx430);
-                NoExtras();
-                float combinedPrice = fx6300.price + biostara960d.price + kblu.price + tb1.price + n760.price + matxcougar.price + cx430.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+
+                totalPriceLabel.Text = "Around $" + Automatizer(fx6300, biostara960d, kblu, tb1, n760, matxcougar, cx430);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYL";
                 fivesixty.active = false;
             }
             else if (sixninety.active == true)
             {
-                Automatizer(fx6300, biostara960d, kblu, tb1, n770, matxcougar, cx750m);
-                NoExtras();
-                float combinedPrice = fx6300.price + biostara960d.price + kblu.price + tb1.price + n770.price + matxcougar.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(fx6300, biostara960d, kblu, tb1, n770, matxcougar, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYE";
                 sixninety.active = false;
             }
             else if (sevenninety.active == true)
             {
-                Automatizer(fx8150, biostara960d, kblu, tb3, n770, matxcougar, cx750m);
-                NoExtras();
-                float combinedPrice = fx8150.price + biostara960d.price + kblu.price + tb3.price + n770.price + matxcougar.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(fx8150, biostara960d, kblu, tb3, n770, matxcougar, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYJ";
                 sevenninety.active = false;
             }
             else if (ninehundred.active == true)
             {
-                Automatizer(i5, msiz87, kblu, tb3, n770, matxcougar, cx750m);
-                NoExtras();
-                float combinedPrice = i5.price + msiz87.price + kblu.price + tb3.price + n770.price + matxcougar.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(i5, msiz87, kblu, tb3, n770, matxcougar, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uXF";
                 ninehundred.active = false;
             }
             else if (onethousand.active == true)
             {
-                Automatizer(i5, msiz87, kblu, tb3, a290, matxcougar, cx750m);
-                NoExtras();
-                float combinedPrice = i5.price + msiz87.price + kblu.price + tb3.price + a290.price + matxcougar.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(i5, msiz87, kblu, tb3, a290, matxcougar, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uXN";
                 onethousand.active = false;
             }
             else if (elevenhundred.active == true)
             {
-                Automatizer(i5, msiz87, gskill, tb3, a290, atxfractal, cx750m);
-                NoExtras();
-                float combinedPrice = i5.price + msiz87.price + gskill.price + tb3.price + a290.price + atxfractal.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(i5, msiz87, gskill, tb3, a290, atxfractal, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYz";
                 elevenhundred.active = false;
             }
             else if (twelvethirty.active == true)
             {
-                Automatizer(i5, msiz87, gskill, tb3, a290x, atxfractal, cx750m);
-                NoExtras();
-                float combinedPrice = i5.price + msiz87.price + gskill.price + tb3.price + a290x.price + atxfractal.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(i5, msiz87, gskill, tb3, a290x, atxfractal, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uY2";
                 twelvethirty.active = false;
             }
             else if (thirteenthirty.active == true)
             {
-                Automatizer(i7, msiz87, gskill, tb3, a290x, atxfractal, cx750m);
-                NoExtras();
-                float combinedPrice = i7.price + msiz87.price + gskill.price + tb3.price + a290x.price + atxfractal.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(i7, msiz87, gskill, tb3, a290x, atxfractal, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYy";
                 thirteenthirty.active = false;
             }
             else if (fourteenfifty.active == true)
             {
-                Automatizer(i7, msiz87, gskill, tb3, n780ti, atxfractal, cx750m);
-                NoExtras();
-                float combinedPrice = i7.price + msiz87.price + gskill.price + tb3.price + n780ti.price + atxfractal.price + cx750m.price;
-                totalPriceLabel.Text = "Around $" + FloatToString(combinedPrice);
+                totalPriceLabel.Text = "Around $" + Automatizer(i7, msiz87, gskill, tb3, n780ti, atxfractal, cx750m);
                 partsLink.Text = "Link to Parts";
                 currentPartsLink = "http://pcpartpicker.com/user/Tzahi12345/saved/4uYj";
                 fourteenfifty.active = false;
