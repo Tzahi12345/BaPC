@@ -34,6 +34,10 @@
             this.partsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.windows8CheckBox = new System.Windows.Forms.RadioButton();
+            this.windows7CheckBox = new System.Windows.Forms.RadioButton();
+            this.osCheckBox = new System.Windows.Forms.CheckBox();
             this.getbuildLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.osPriceLabel = new System.Windows.Forms.Label();
@@ -72,25 +76,21 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.osCheckBox = new System.Windows.Forms.CheckBox();
-            this.windows7CheckBox = new System.Windows.Forms.RadioButton();
-            this.windows8CheckBox = new System.Windows.Forms.RadioButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.contactBox = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.emailLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.label13 = new System.Windows.Forms.Label();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.contactBox = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.emailLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.optionsGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.optionsGroupBox.SuspendLayout();
             this.contactBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,7 +118,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(667, 548);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -135,6 +135,53 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Parts";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // optionsGroupBox
+            // 
+            this.optionsGroupBox.Controls.Add(this.windows8CheckBox);
+            this.optionsGroupBox.Controls.Add(this.windows7CheckBox);
+            this.optionsGroupBox.Controls.Add(this.osCheckBox);
+            this.optionsGroupBox.Location = new System.Drawing.Point(448, 13);
+            this.optionsGroupBox.Name = "optionsGroupBox";
+            this.optionsGroupBox.Size = new System.Drawing.Size(200, 95);
+            this.optionsGroupBox.TabIndex = 5;
+            this.optionsGroupBox.TabStop = false;
+            this.optionsGroupBox.Text = "Options";
+            // 
+            // windows8CheckBox
+            // 
+            this.windows8CheckBox.AutoSize = true;
+            this.windows8CheckBox.Enabled = false;
+            this.windows8CheckBox.Location = new System.Drawing.Point(20, 68);
+            this.windows8CheckBox.Name = "windows8CheckBox";
+            this.windows8CheckBox.Size = new System.Drawing.Size(116, 18);
+            this.windows8CheckBox.TabIndex = 5;
+            this.windows8CheckBox.TabStop = true;
+            this.windows8CheckBox.Text = "Windows 8/8,1";
+            this.windows8CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // windows7CheckBox
+            // 
+            this.windows7CheckBox.AutoSize = true;
+            this.windows7CheckBox.Enabled = false;
+            this.windows7CheckBox.Location = new System.Drawing.Point(20, 44);
+            this.windows7CheckBox.Name = "windows7CheckBox";
+            this.windows7CheckBox.Size = new System.Drawing.Size(95, 18);
+            this.windows7CheckBox.TabIndex = 4;
+            this.windows7CheckBox.TabStop = true;
+            this.windows7CheckBox.Text = "Windows 7";
+            this.windows7CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // osCheckBox
+            // 
+            this.osCheckBox.AutoSize = true;
+            this.osCheckBox.Location = new System.Drawing.Point(6, 20);
+            this.osCheckBox.Name = "osCheckBox";
+            this.osCheckBox.Size = new System.Drawing.Size(97, 18);
+            this.osCheckBox.TabIndex = 3;
+            this.osCheckBox.Text = "Include OS";
+            this.osCheckBox.UseVisualStyleBackColor = true;
+            this.osCheckBox.CheckedChanged += new System.EventHandler(this.osCheckBox_CheckedChanged);
             // 
             // getbuildLabel
             // 
@@ -506,8 +553,8 @@
             this.priceTB.Font = new System.Drawing.Font("Trajan Pro", 15.75F);
             this.priceTB.Location = new System.Drawing.Point(106, 21);
             this.priceTB.Name = "priceTB";
-            this.priceTB.Size = new System.Drawing.Size(118, 34);
-            this.priceTB.TabIndex = 2;
+            this.priceTB.Size = new System.Drawing.Size(118, 33);
+            this.priceTB.TabIndex = 1;
             this.priceTB.TextChanged += new System.EventHandler(this.priceTB_TextChanged);
             // 
             // priceLabel
@@ -526,7 +573,7 @@
             this.getbuildButton.Location = new System.Drawing.Point(8, 75);
             this.getbuildButton.Name = "getbuildButton";
             this.getbuildButton.Size = new System.Drawing.Size(137, 38);
-            this.getbuildButton.TabIndex = 0;
+            this.getbuildButton.TabIndex = 2;
             this.getbuildButton.Text = "Get Build";
             this.getbuildButton.UseVisualStyleBackColor = true;
             this.getbuildButton.Click += new System.EventHandler(this.getbuildButton_Click);
@@ -568,63 +615,23 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // optionsGroupBox
+            // label13
             // 
-            this.optionsGroupBox.Controls.Add(this.windows8CheckBox);
-            this.optionsGroupBox.Controls.Add(this.windows7CheckBox);
-            this.optionsGroupBox.Controls.Add(this.osCheckBox);
-            this.optionsGroupBox.Location = new System.Drawing.Point(448, 13);
-            this.optionsGroupBox.Name = "optionsGroupBox";
-            this.optionsGroupBox.Size = new System.Drawing.Size(200, 95);
-            this.optionsGroupBox.TabIndex = 5;
-            this.optionsGroupBox.TabStop = false;
-            this.optionsGroupBox.Text = "Options";
+            this.label13.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(441, 155);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(210, 213);
+            this.label13.TabIndex = 3;
+            this.label13.Text = resources.GetString("label13.Text");
             // 
-            // osCheckBox
+            // webBrowser2
             // 
-            this.osCheckBox.AutoSize = true;
-            this.osCheckBox.Location = new System.Drawing.Point(6, 20);
-            this.osCheckBox.Name = "osCheckBox";
-            this.osCheckBox.Size = new System.Drawing.Size(97, 18);
-            this.osCheckBox.TabIndex = 0;
-            this.osCheckBox.Text = "Include OS";
-            this.osCheckBox.UseVisualStyleBackColor = true;
-            this.osCheckBox.CheckedChanged += new System.EventHandler(this.osCheckBox_CheckedChanged);
-            // 
-            // windows7CheckBox
-            // 
-            this.windows7CheckBox.AutoSize = true;
-            this.windows7CheckBox.Enabled = false;
-            this.windows7CheckBox.Location = new System.Drawing.Point(20, 44);
-            this.windows7CheckBox.Name = "windows7CheckBox";
-            this.windows7CheckBox.Size = new System.Drawing.Size(95, 18);
-            this.windows7CheckBox.TabIndex = 1;
-            this.windows7CheckBox.TabStop = true;
-            this.windows7CheckBox.Text = "Windows 7";
-            this.windows7CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // windows8CheckBox
-            // 
-            this.windows8CheckBox.AutoSize = true;
-            this.windows8CheckBox.Enabled = false;
-            this.windows8CheckBox.Location = new System.Drawing.Point(20, 68);
-            this.windows8CheckBox.Name = "windows8CheckBox";
-            this.windows8CheckBox.Size = new System.Drawing.Size(116, 18);
-            this.windows8CheckBox.TabIndex = 2;
-            this.windows8CheckBox.TabStop = true;
-            this.windows8CheckBox.Text = "Windows 8/8,1";
-            this.windows8CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(659, 148);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.webBrowser2.Location = new System.Drawing.Point(6, 155);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(419, 358);
+            this.webBrowser2.TabIndex = 2;
+            this.webBrowser2.Url = new System.Uri("http://www.youtube.com/embed/QBK3QpQVnaw", System.UriKind.Absolute);
             // 
             // contactBox
             // 
@@ -639,15 +646,26 @@
             this.contactBox.TabStop = false;
             this.contactBox.Text = "Contact Me";
             // 
-            // label11
+            // linkLabel1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Trajan Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 18);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "E-mail:";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(86, 52);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(67, 14);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Tzahi.net";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Trajan Pro", 10F);
+            this.label12.Location = new System.Drawing.Point(7, 50);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Website:";
             // 
             // emailLinkLabel
             // 
@@ -660,47 +678,30 @@
             this.emailLinkLabel.Text = "tzahi2@hotmail.com";
             this.emailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.emailLinkLabel_LinkClicked);
             // 
-            // label12
+            // label11
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Trajan Pro", 10F);
-            this.label12.Location = new System.Drawing.Point(7, 50);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 18);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Website:";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Trajan Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 18);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "E-mail:";
             // 
-            // linkLabel1
+            // richTextBox1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(86, 52);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(67, 14);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Tzahi.net";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Location = new System.Drawing.Point(6, 155);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(419, 358);
-            this.webBrowser2.TabIndex = 2;
-            this.webBrowser2.Url = new System.Uri("http://www.youtube.com/embed/QBK3QpQVnaw", System.UriKind.Absolute);
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Trajan Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(441, 155);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(210, 213);
-            this.label13.TabIndex = 3;
-            this.label13.Text = resources.GetString("label13.Text");
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Trajan Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(659, 148);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // BaPC
             // 
+            this.AcceptButton = this.getbuildButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 548);
@@ -714,12 +715,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.optionsGroupBox.ResumeLayout(false);
+            this.optionsGroupBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.optionsGroupBox.ResumeLayout(false);
-            this.optionsGroupBox.PerformLayout();
             this.contactBox.ResumeLayout(false);
             this.contactBox.PerformLayout();
             this.ResumeLayout(false);
